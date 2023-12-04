@@ -1,9 +1,8 @@
-import { response } from 'express';
 import User from '../models/userModel.js';
 
 export const getUser = async (req, res) => {
     try {
-        const respone = await User.findAll();
+        const response = await User.findAll();
         res.status(200).json(response);
     } catch (error) {
         console.log(error.message);
@@ -12,7 +11,7 @@ export const getUser = async (req, res) => {
 
 export const getUserById = async (req, res) => {
     try {
-        const respone = await User.findOne({
+        const response = await User.findOne({
             where: {
                 id: req.params.id
             }
